@@ -14,7 +14,7 @@ public class IndexModel : PageModel
 
     public void OnGet()
     {
-        // Empty because it is just an empty application
+        _logger.LogInformation("OnGet method executed");
     }
 }
 
