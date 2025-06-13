@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "{{ include "dotnet-6-0-clone-hub-semver-build.fullname" . }}-test-connection"
+  labels:
+    {{- include "dotnet-6-0-clone-hub-semver-build.labels" . | nindent 4 }}
+  annotations:
+    "helm.sh/hook": test-success
+spec:
+  containers:
+    - name: wget
+      image: busybox
+      command: ['wget']
+      args: ['{{ include "dotnet-6-0-clone-hub-semver-build.fullname" . }}:{{ .Values.service.port }}']
+  restartPolicy: Never

@@ -1,0 +1,1 @@
+1. Application dotnet-6-0-clone-hub-semver-build has been successfully deployed!!
